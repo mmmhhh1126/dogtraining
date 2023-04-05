@@ -15,12 +15,12 @@
     <div class="showtitle">
       <h1>{{ $training->trickname }}</h1>
     </div>
-    <div class="osiekata">
+    <div class="osiekata bs">
       <h2>教え方</h2>
       <p>{{ $training->teach }}</p>
     </div>
     <div class="sukima"></div>
-    <div class="osieruriyuu">
+    <div class="osieruriyuu bs">
       <h2>教える理由</h2>
       <p>{{ $training->why }}</p>
     </div>

@@ -17,19 +17,24 @@
 
             @foreach ($posts as $post)
             <tr>
-                <form action="" method="">
-                    <td>@if ($post->image !=='')<img class="inugazou" src="{{ asset('storage/' . $post->image) }}" >
-                        @else @endif</td>
-                    <td><a href="{{ route('trainings.index') }}">{{ $post->title }}</a></td>
-                    <td>{!! nl2br( htmlspecialchars($post->description) ) !!}</td>
-                </form>
-                <td>
-                    <form action="{{ route('posts.destroy',$post->id) }}" method="POST" onsubmit="return confirm('削除してもよろしいですか？');">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <button type="submit">削除</button>
+                <div class="dog1">
+                    <form action="" method="">
+                        <div class="rem">@if ($post->image !=='')<img class="inugazou" src="{{ asset('storage/' . $post->image) }}">
+                            @else @endif</div>
+                        <div class="rem"><a class="dnone" href="{{ route('trainings.user', ['post_id' => $post->id]) }}">{{ $post->title }}<span>→</span></a></div>
+                        <div class="rem">{!! nl2br( htmlspecialchars($post->description) ) !!}</div>
                     </form>
-                </td>
+                    <div class="kanryoubtnbtn">
+                        <a href="{{ route('posts.show', $post->id) }}" class="kanryoubtn wf-nicomoji">すべてかんりょう</a>
+                    </div>
+                    <div>
+                        <form action="{{ route('posts.destroy',$post->id) }}" method="POST" onsubmit="return confirm('削除してもよろしいですか？');">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <button class="iidb" type="submit">delete</button>
+                        </form>
+                    </div>
+                    </td>
 
             </tr>
             @endforeach

@@ -11,24 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('trainings', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('trickname', 20);
-            $table->string('teach', 1000);
-            $table->string('why', 500);
-            $table->integer('required_time');
+        Schema::create('completed_trainings', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
     }
-    
-    
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('trainings');
+        Schema::dropIfExists('completed_trainings');
     }
 };

@@ -5,19 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CompletedTraining extends Model
+class Completed_training extends Model
 {
     use HasFactory;
+    protected $fillable = ['trickname','training_id', 'why', 'teach'];
 
-    protected $fillable = [
-        'dog_id',
-        'training_id',
-    ];
-
-    public function dog()
-    {
-        return $this->belongsTo(Dog::class);
-    }
+    // public function dog()
+    // {
+    //     return $this->belongsTo(Dog::class);
+    // }
 
     public function training()
     {

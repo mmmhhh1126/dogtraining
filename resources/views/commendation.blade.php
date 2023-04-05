@@ -16,7 +16,7 @@
         <div class="completeimg">
             <img src="{{ asset('img\表彰状.jpg') }}" alt="">
             <div class="name">
-                <p>test</p>
+                <p>{{ $post->title }}</p>
             </div>
             <div class="honbun">
                 <p class="">優良家庭犬項目習得</p>

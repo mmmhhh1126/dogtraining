@@ -16,7 +16,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
-use App\Http\Controllers\CompletedTrainingController;
+use App\Http\Controllers\Completed_trainingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +55,8 @@ Route::get('/show', function () {
     return view('usertraining');
 });
 
+
+//表彰状
 Route::get('/commendation', function () {
     return view('commendation');
 });
@@ -97,7 +99,7 @@ Route::get('/show', [TrainingController::class, 'show'])->name('trainings.show')
 Route::get('trainings/{id}/show', [TrainingController::class, 'show'])->name('trainings.show');
 
 //トレーニング
-Route::post('/training', [TrainingController::class, 'submit'])->name('form.submit');
+Route::post('/admin_trainings', [TrainingController::class, 'submit'])->name('form.submit');
 Route::get('/createok', function () {
     return view('createok');
 });
@@ -144,7 +146,10 @@ Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.
 
 
 // ユーザートレーニング一覧
-Route::get('/trainings', [TrainingController::class, 'index'])->name('trainings.index');
+Route::get('/trainings', [TrainingController::class, 'user'])->name('trainings.user');
+
+// Route::get('/trainings', [TrainingController::class, 'user'])->name('trainings.index');
+
 // Route::post('/trainings', [TrainingController::class, 'store'])->name('trainings.store');
 // Route::get('/trainings/create', [TrainingController::class, 'create'])->name('trainings.create');
 Route::get('/trainings/{training_id}', [TrainingController::class, 'show'])->name('trainings.show');
@@ -157,5 +162,8 @@ Route::get('/trainings/{training_id}', [TrainingController::class, 'show'])->nam
 Route::get('/pdf/dl/{customer_id}', [PdfController::class, 'index'])->name('pdf.dl');
 Route::get('/pdf/view/{customer_id}', [PdfController::class, 'view'])->name('pdf.view');
 
-//修了レベルで色変える
-Route::get('/completed_trainings', [CompletedTrainingController::class, 'index'])->name('completed_trainings.index');
+//表彰状
+// Route::get('/commendation', [PostController::class, 'commendation'])->name('trainings.commendation');
+// Route::get('/posts/{post}', [PostController::class, 'commendation'])->name('posts.commendation');
+
+

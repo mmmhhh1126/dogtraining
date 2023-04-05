@@ -17,23 +17,24 @@
       <h2 class=" wf-nicomoji">いぬのとうろく</h2>
       <div class="dogbox">
         <div>
-          <div>
-            <label class=" wf-nicomoji">なまえ</label>
+          <div class="mb1">
+            <label class="dn wf-nicomoji">おなまえ</label>
           </div>
           <div>
-            <input type="text" name="title" value="{{old('title')}}">
+            <input type="text" name="title" value="{{old('title')}}" class="wt nwt">
           </div>
           @error('title')
           <span>{{ $message }}</span>
           @enderror
         </div>
 
-        <div>
-          <div>
-            <label class="wf-nicomoji">memo</label>
+        <div class="m5">
+          <div class="mb1">
+            <label class="wf-nicomoji dn">memo</label>
           </div>
           <div>
-            <textarea name="description" rows="4"> {{old('description')}}</textarea>
+            <textarea name="description" rows="4" class="wt"> {{old('description')}}</textarea>
+            <p class="chuushaku">・犬の性格や問題行動・アレルギー等トレーニングする際に気を付ける事をメモしておきましょう</p>
           </div>
           @error('description')
           <span>{{ $message }}</span>
@@ -41,19 +42,21 @@
         </div>
 
         <div>
-          <div><label class=" wf-nicomoji">しゃしん</label></div>
+          <div><label class=" wf-nicomoji dn">しゃしん</label></div>
           <div>
-            <input type="file" name="image">
+            <input type="file" name="image" class="file">
           </div>
           @error('image')
           <span>{{ $message }}</span>
           @enderror
         </div>
 
-        <button type="submit" class="dogbtn wf-nicomoji">とうろく</button>
+        <button type="submit" class="dogbtn wf-nicomoji">わんちゃんのとうろく</button>
       </div>
     </form>
-    <button type="button" class="dogbtn dogbtnbuck wf-nicomoji" onClick="history.back()">もどる</button>
+    <div class="dmbb">
+      <button type="button" class="dmb dogbtn  wf-nicomoji" onClick="history.back()">もどる</button>
+    </div>
   </div>
   <div class="dogpic"></div>
 </body>

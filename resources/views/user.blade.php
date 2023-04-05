@@ -22,9 +22,6 @@
                 <a href="{{ route('login') }}" class="userlogin">ログイン</a>
             </div>
             <div class="usermainbtn wf-nicomoji">
-                <a href="" class="notuser">ログインせずにつかう</a>
-            </div>
-            <div class="usermainbtn wf-nicomoji">
                 <a href="{{ route('register') }}" class="firstuser">はじめて</a>
             </div>
 

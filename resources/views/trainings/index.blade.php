@@ -18,18 +18,15 @@
         <table>
             <ul>
                 @foreach ($trainings as $training)
-                <li ><a href="{{ route('trainings.show', $training->id) }}">{{ $training->trickname }}</a></li>
+                <li><a href="{{ route('trainings.show', $training->id) }}">{{ $training->trickname }}</a></li>
                 @endforeach
             </ul>
         </table>
         <div class="displayflex">
-        <div class="indexbuck usermainbtn">
-            <button type="button" class="dogbtn dogbtnbuck wf-nicomoji" onClick="history.back()">もどる</button>
+            <div class="indexbuck usermainbtn">
+                <button type="button" class="dogbtn dogbtnbuck wf-nicomoji" onClick="history.back()">もどる</button>
+            </div>
         </div>
-        <div class="indexbuck usermainbtn">
-            <button type="button" class="kanryoubtn dogbtn dogbtnbuck wf-nicomoji" onClick="history.back()" >すべてかんりょう</button>
-        </div>
-    </div>
     </div>
 </body>
 
