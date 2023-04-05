@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Training;
-use App\Models\Completed_training;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -42,32 +41,21 @@ class TrainingController extends Controller
     }
 
 
+    // public function user()
+    // {
+    //     $trainings = Training::all();
+    //     return view('trainings.index', compact('trainings'));
+    // }
+    
     public function user()
     {
         $trainings = Training::all();
         return view('trainings.index', compact('trainings'));
     }
-
-    // public function user(Request $request)
-    // {
-    //     // 渡されたpost_idパラメータを取得
-    //     $post_id = $request->input('post_id');
-
-    //     // post_idに紐づくトレーニング一覧を取得
-    //     $trainings = Training::where('post_id', $post_id)->get();
-
-    //     // 完了したトレーニングにはcompletedクラスを付ける
-    //     $completed_trainings = Completed_training::where('post_id', $post_id)->pluck('training_id');
-    //     return view('trainings.index', [
-    //         'trainings' => $trainings,
-    //         'completed_trainings' => $completed_trainings,
-    //     ]);
-    // }
-
     public function show(Request $request, $training_id)
     {
         $training = Training::where('id', '=', $training_id)->first();
-        return view('trainings.show', compact('trainings'));
+        return view('trainings.show', compact('training'));
     }
 
     //新規作成
@@ -116,8 +104,10 @@ class TrainingController extends Controller
 
 
     //犬のトレーニングページ
-    public function showTrainings($user_id, $post_id)
-    {
-        $post_id = auth()->id();
-    }
+    public function showTrainings($user_id, $dog_id) {
+        $dog_id = auth()->id(); 
+     }
+
+
+
 }

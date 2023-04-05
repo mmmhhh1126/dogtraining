@@ -30,10 +30,6 @@
                     <p> <input type="text" name="why" id="why" class="te" value="{{ $training->why }}" required></p>
                 </div>
                 <div class="trainingeditbox">
-                    <p> <label for="pic">参考写真</label></p>
-                    <p><input type="file" name="pic" id="pic" class="pic" value="{{ $training->pic }}" required></p>
-                </div>
-                <div class="trainingeditbox">
                     <button type="submit" class="tebtn">更新</button>
                 </div>
             </form>
